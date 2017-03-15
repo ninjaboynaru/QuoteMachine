@@ -3,7 +3,6 @@
 NewQuote();
 function NewQuote()
 {
-	var quoteData = {};
 	var apiURL  = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1"
 	$.ajax(
 	{
