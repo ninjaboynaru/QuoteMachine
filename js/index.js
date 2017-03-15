@@ -20,8 +20,8 @@ function SetQuoteUI(quoteData)
 	var quoteUI = document.getElementById("Quote");
 	var authorUI = document.getElementById("Author");
 	
-	quoteUI.innerHTML = '"' + quoteData.quoteText +'"';
-	authorUI.innerHTML = "- " + quoteData.quoteAuthor;
+	quoteUI.innerHTML = '"' + quoteData[0].text +'"';
+	authorUI.innerHTML = "- " + quoteData[0].title;
 }
 
 function AnimateUI()
