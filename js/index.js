@@ -8,7 +8,8 @@ function NewQuote()
 	$.ajax(
 	{
 		url:apiURL,
-		success:function(q){SetQuoteUI(q);} 
+		success:function(q){SetQuoteUI(q);},
+		cache:false
 	});
 }
 
