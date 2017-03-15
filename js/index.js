@@ -8,7 +8,7 @@ function NewQuote()
 	$.ajax(
 	{
 		url:apiURL,
-		success:function(q){SetQuoteUI(q)} 
+		success:function(q){SetQuoteUI(q);} 
 	});
 }
 
@@ -18,7 +18,7 @@ function SetQuoteUI(quoteData)
 	var quoteUI = document.getElementById("Quote");
 	var authorUI = document.getElementById("Author");
 	
-	quoteUI.innerHTML = '"' + StripHTMLTag(quoteData[0].content +)'"';
+	quoteUI.innerHTML = '"' + StripHTMLTag(quoteData[0].content) + '"';
 	authorUI.innerHTML = "- " + quoteData[0].title;
 }
 
