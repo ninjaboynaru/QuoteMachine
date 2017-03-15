@@ -9,7 +9,7 @@ function NewQuote()
 	$.ajax(
 	{
 		url:apiURL,
-		success:function(q){SetQuoteUI()} 
+		success:function(q){SetQuoteUI(q)} 
 	});
 	console.log("AJAX Called");
 }
