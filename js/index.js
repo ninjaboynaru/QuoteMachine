@@ -4,14 +4,12 @@ NewQuote();
 function NewQuote()
 {
 	var quoteData = {};
-	var apiURL  = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?"
-	console.log("API URL stored in var");
+	var apiURL  = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1"
 	$.ajax(
 	{
 		url:apiURL,
 		success:function(q){SetQuoteUI(q)} 
 	});
-	console.log("AJAX Called");
 }
 
 function SetQuoteUI(quoteData)
@@ -20,7 +18,7 @@ function SetQuoteUI(quoteData)
 	var quoteUI = document.getElementById("Quote");
 	var authorUI = document.getElementById("Author");
 	
-	quoteUI.innerHTML = '"' + quoteData[0].text +'"';
+	quoteUI.innerHTML = '"' + StripHTMLTag(quoteData[0].content +)'"';
 	authorUI.innerHTML = "- " + quoteData[0].title;
 }
 
@@ -35,7 +33,6 @@ function AnimateUI()
 	$(".button").animate( {backgroundColor:color}, 1000);
 }
 
-
 function Tweet()
 {
 	var url = "https://twitter.com/intent/tweet?text="
@@ -45,3 +42,9 @@ function Tweet()
 	
 	window.open(url);
 }
+
+function StripHTMLTag(text)
+{
+	return text.replace(/(<([^>]+)>)/ig,"");
+}
+
